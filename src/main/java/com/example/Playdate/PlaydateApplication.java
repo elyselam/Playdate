@@ -10,7 +10,7 @@ public class PlaydateApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(PlaydateApplication.class, args);
-		System.out.println("yay");
+		System.out.println("yayy");
 	}
 
 }
