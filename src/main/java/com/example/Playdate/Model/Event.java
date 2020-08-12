@@ -1,4 +1,4 @@
-package com.example.Playdate;
+package com.example.Playdate.Model;
 
 import java.time.LocalDate;
 
