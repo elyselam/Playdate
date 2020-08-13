@@ -23,5 +23,12 @@ public class UserService {
     public void removeUserById(int id) {
         this.userDao.removeUserById(id);
     }
+    public void updateUser(User user){
+        this.userDao.updateUser(user);
+    }
 
+
+    public void insertUser(User user) {
+        userDao.insertUser(user);
+    }
 }

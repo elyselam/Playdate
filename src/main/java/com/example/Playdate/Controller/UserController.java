@@ -3,10 +3,8 @@ package com.example.Playdate.Controller;
 import com.example.Playdate.Model.User;
 import com.example.Playdate.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -15,10 +13,6 @@ import java.util.Collection;
 @RequestMapping("/user")
 public class UserController {
 
-//    @RequestMapping("/")
-//    public String index() {
-//        return "yay";
-//    }
     @Autowired
     private UserService userService;
 
@@ -30,6 +24,16 @@ public class UserController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public User getUserById(@PathVariable("id") int id) {
         return userService.getUserById(id);
+    }
+
+    @RequestMapping(method=RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void updateUser(@RequestBody User user) {
+        userService.updateUser(user);
+    }
+
+    @RequestMapping(method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void insertUser(@RequestBody User user) {
+        userService.insertUser(user);
     }
 
 
